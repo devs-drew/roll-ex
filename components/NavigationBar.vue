@@ -4,10 +4,16 @@ const toggleNav = ref(false)
 
 <template>
     <nav class="bg-[#3C3E3E] text-[#F3F3F3] px-6 py-4 flex justify-between items-center">
-        <div class="text-2xl">Re'X</div>
+        <div class="text-2xl">
+            <NuxtLink to="/">Re'X</NuxtLink>
+        </div>
         <ul class="hidden lg:flex items-center space-x-12">
-            <li class="cursor-pointer">Collections</li>
-            <li class="cursor-pointer">Accessories</li>
+            <li class="cursor-pointer">
+                <NuxtLink to="/collections">Collections</NuxtLink>
+            </li>
+            <li class="cursor-pointer">
+                <NuxtLink to="/accessories">Accessories</NuxtLink>
+            </li>
             <li class="cursor-pointer">Promotions</li>
             <li class="cursor-pointer">Stores</li>
             <li class="cursor-pointer">Contact</li>

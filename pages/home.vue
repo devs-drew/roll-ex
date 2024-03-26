@@ -3,6 +3,9 @@ import RolexLogo from '~/assets/images/rolex_logo.png'
 import PatekPhLogo from '~/assets/images/patek_ph_logo.png'
 import HuaweiLogo from '~/assets/images/huawei_logo.png'
 import PHLogo from '~/assets/images/ph-logo.png'
+import Item3 from '~/assets/images/item_3.png'
+
+const image_placeholder = ref(Array(10).fill(Item3))
 </script>
 
 <template>
@@ -27,7 +30,7 @@ import PHLogo from '~/assets/images/ph-logo.png'
             <h2 class="text-center text-5xl font-extralight mb-4">Roll'ex Store</h2>
             <p class="self-end cursor-pointer mb-8 hover:underline">Show more items ></p>
             <Swiper
-                class="feauted-swiper w-[350px] lg:w-[1050px]"
+                class="feauted-swiper w-[335px] lg:w-[1005px]"
                 :breakpoints="{
                     1024: {
                         slidesPerView: 3,
@@ -38,70 +41,63 @@ import PHLogo from '~/assets/images/ph-logo.png'
                 :pagination="{ clickable: true }"
             >
                 <SwiperSlide
-                    class="flex justify-center"
-                    v-for="index in 6"
+                    class="flex justify-center !w-[auto] mx-auto mt-4 mb-12"
+                    v-for="(item, index) in image_placeholder"
                     :key="index"
                 >
-                    <ProductCard />
+                    <ProductCard
+                        :image="item"
+                        class="mx-4"
+                    />
                 </SwiperSlide>
             </Swiper>
         </div>
     </section>
-    <section class="grid items-center w-full overflow-hidden p-12 bg-[#F4F4F4]">
-        <h2 class="text-center text-5xl font-extralight mb-12">Our partners</h2>
-        <div class="flex flex-wrap justify-center md:justify-center items-center gap-12">
-            <template
-                v-for="index in [RolexLogo, HuaweiLogo, PatekPhLogo, PHLogo]"
-                :key="index"
-            >
-                <SponsorLogoContainer :src="index" />
-            </template>
-        </div>
-        <!-- <div class="flex flex-col h-auto">
-            <Swiper
-                class="sponsor-swiper w-[100vw]"
-                :modules="[SwiperAutoplay, SwiperEffectCreative]"
-                :loop="true"
-                :centeredSlides="true"
-                :slidesPerView="3"
-                :breakpoints="{
-                    320: {
-                        slidesPerView: 3,
-                        centeredSlides: false,
-                    },
-                }"
-                :autoplay="{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }"
-                :speed="1500"
-            >
+    <section class="flex justify-center items-center w-full overflow-hidden bg-[#F4F4F4]">
+        <div class="container p-16">
+            <h2 class="text-center text-5xl font-extralight mb-12">Our partners</h2>
+            <div class="flex flex-wrap justify-center md:justify-center items-center gap-12">
                 <template
-                    v-for="index in [RolexLogo, PatekPhLogo, HuaweiLogo, RolexLogo, PatekPhLogo, HuaweiLogo, RolexLogo, PatekPhLogo, HuaweiLogo]"
+                    v-for="index in [RolexLogo, HuaweiLogo, PatekPhLogo, PHLogo]"
                     :key="index"
                 >
-                    <SwiperSlide>
-                        <SponsorLogoContainer :src="index" />
-                    </SwiperSlide>
+                    <SponsorLogoContainer :src="index" />
                 </template>
-            </Swiper>
-        </div> -->
+            </div>
+            <!-- <div class="flex flex-col h-auto">
+                <Swiper
+                    class="sponsor-swiper w-[100vw]"
+                    :modules="[SwiperAutoplay, SwiperEffectCreative]"
+                    :loop="true"
+                    :centeredSlides="false"
+                    :slidesPerView="2"
+                    :breakpoints="{
+                        320: {
+                            slidesPerView: 3,
+                            centeredSlides: false,
+                        },
+                    }"
+                    :autoplay="{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }"
+                    :speed="1500"
+                >
+                    <template
+                        v-for="index in [RolexLogo, PatekPhLogo, HuaweiLogo, RolexLogo, PatekPhLogo, HuaweiLogo, RolexLogo, PatekPhLogo]"
+                        :key="index"
+                    >
+                        <SwiperSlide>
+                            <SponsorLogoContainer :src="index" />
+                        </SwiperSlide>
+                    </template>
+                </Swiper>
+            </div> -->
+        </div>
     </section>
 </template>
 
 <style>
-/* .swiper.feauted-swiper .swiper-wrapper {
-    width: auto;
-} */
-
-.swiper.feauted-swiper .swiper-wrapper .swiper-slide {
-    width: 350px !important;
-    display: flex;
-    justify-content: center;
-    margin: 0px;
-    margin: 1rem 0rem 3rem 0rem;
-}
-
 .swiper-pagination-horizontal {
     display: flex;
     align-items: center;

@@ -2,4 +2,6 @@
     <NuxtPage />
 </template>
 
-<script setup></script>
+<script setup>
+navigateTo('/home')
+</script>

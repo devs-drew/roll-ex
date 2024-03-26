@@ -1,11 +1,11 @@
 <template>
     <div
         id="app"
-        class="relative font-body bg-[#F4F4F4] overflow-hidden"
+        class="relative font-body bg-white overflow-hidden"
     >
         <AnnouncementHeader />
         <NavigationBar />
-        <main>
+        <main class="min-h-screen relative">
             <slot />
         </main>
         <Footer />
