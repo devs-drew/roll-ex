@@ -57,7 +57,10 @@ const image_placeholder = ref(Array(2).fill([Item1, Item2, Item3]).flat())
                 v-for="item in image_placeholder"
                 :key="item"
             >
-                <ProductCard :image="item" />
+                <ProductCard
+                    :image="item"
+                    @click="navigateTo(`/accessories/${index}`)"
+                />
             </template>
         </div>
     </section>

@@ -5,7 +5,7 @@
     >
         <AnnouncementHeader />
         <NavigationBar />
-        <main class="min-h-screen relative">
+        <main class="min-h-screen relative flex flex-col">
             <slot />
         </main>
         <Footer />
