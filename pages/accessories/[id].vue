@@ -63,7 +63,7 @@ const image_placeholder = ref(Array(10).fill(Item3))
                 </div>
                 <div class="flex justify-between items-center">
                     <nuxt-link
-                        to="/collections"
+                        to="/accessories"
                         class="hover:underline"
                     >
                         <Icon name="fe:arrow-left" />
